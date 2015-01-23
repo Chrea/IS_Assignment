@@ -10,8 +10,8 @@ class Application extends CI_Controller {
     protected $data = array();      // parameters for view components
     protected $id;		  // identifier for our content
     protected $choices = array(// our menu navbar
-	'Home' => '/', 'Features' => '/features', 'News' => '/news',
-        'About' => '/about', 'Contact' => '/contact'
+	'Home' => '/', 'Repository' => '/repository', 'Post' => '/posts',
+        'About' => '/about'
     );
 
     /**
@@ -22,7 +22,7 @@ class Application extends CI_Controller {
     {
 	parent::__construct();
 	$this->data = array();
-	$this->data['pagetitle'] = 'Zerotype Website Template';
+	$this->data['pagetitle'] = 'Develop()';
     }
 
     /**

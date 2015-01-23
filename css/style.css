@@ -46,8 +46,8 @@ img {
 }
 /*------------------------------ HEADER ------------------------------*/
 #header {
-	background-color: #eee;
-	border-bottom: 1px solid #e6e6e6;
+	background-color: #782323;
+	border-bottom: 1px solid #361111;
 	padding: 27px 0;
 }
 #header > div, #footer > div {
@@ -91,7 +91,7 @@ img {
 	text-align: center;
 }
 #navigation li a {
-	color: #818181;
+	color: #FFF;
 	font-size: 15px;
 	line-height: 30px;
 	text-decoration: none;
@@ -100,7 +100,7 @@ img {
 	color: #000;
 }
 #navigation li.active a {
-	color: #f99600;
+	color: #149594;
 }
 #adbox {
 	background: url(../images/bg-adbox.jpg) repeat-x left top;
@@ -151,6 +151,7 @@ img {
 	width: 880px;
 	margin: 0 auto;
 	padding: 54px 40px;
+        
 }
 h1 {
 	color: #3e3e3e;

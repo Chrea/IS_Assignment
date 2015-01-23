@@ -12,17 +12,17 @@
 				<a href="/">Develop()</a>
 			</div>
 			<ul id="navigation">
-				<li>
+				<li class="active">
 					<a href="/">Home</a>
 				</li>
-				<li class="active">
+				<li>
 					<a href="/posts">Posts</a>
 				</li>
 				<li>
-					<a href="/images">Images</a>
+					<a href="/gallery">Gallery</a>
 				</li>
 				<li>
-					<a href="/repo">Repository</a>
+					<a href="/repository">Repository</a>
 				</li>
 				<li>
 					<a href="/about">About</a>
