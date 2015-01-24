@@ -47,7 +47,7 @@ img {
 /*------------------------------ HEADER ------------------------------*/
 #header {
 	background-color: #782323;
-	border-bottom: 1px solid #361111;
+	border-bottom: 2px solid #361111;
 	padding: 27px 0;
 }
 #header > div, #footer > div {
@@ -61,9 +61,11 @@ img {
 	margin-right: 20px;
 }
 #header .logo a {
-	background: url(../images/logo.png) no-repeat center top;
-	color: #000;
+	background-image: url(../images/logo.png);
+	color: #FFF;
 	display: block;
+        background-repeat: no-repeat;
+        background-size: contain;
 	font: 15px/30px 'Play';
 	height: 20px;
 	width: 76px;
@@ -205,13 +207,17 @@ p a {
 	border: 1px solid #d5d5d5;
 	text-align: center;
 }
+/* Title of date */
 .date p {
 	margin: 12px 0 0;
+        color: #000;
 }
+
 .date p span {
 	display: block;
 	font-size: 30px;
 	margin-bottom: 6px;
+        color: #000;
 }
 .author {
 	color: #585858;
@@ -219,8 +225,8 @@ p a {
 	font-size: 12px;
 }
 .more {
-	background-color: #727272;
-	color: #fff;
+	background-color: #782323;
+	color: #000;
 	display: inline-block;
 	font-size: 14px;
 	line-height: 30px;
@@ -229,7 +235,7 @@ p a {
 	text-decoration: none;
 }
 .more:hover, .message input[type='submit']:hover {
-	background-color: #f99600;
+	background-color: #149594;
 	color: #000;
 }
 /** main **/
@@ -282,26 +288,35 @@ p a {
 .posts li {
 	border-bottom: 1px solid #d5d5d5;
 	padding: 24px 10px 0;
+        color: #FFF;
 }
 .posts li p {
 	font-size: 14px;
+         color: #000;
 }
 .posts li .title {
 	font-size: 16px;
 	font-weight: normal;
 	margin: 0 0 12px;
+        color: #000;
 }
 .posts li .title a {
-	color: #2c2c2c;
+	ccolor: #000;
 	font-size: 16px;
 	text-decoration: none;
 }
 .post {
 	width: 785px;
 	margin: 0 auto;
+        color: #000;
+        margin-bottom: 10px;
+        border-bottom:dotted;
+        border-width: 10px;
+        border-color: #000;
 }
 .post h1 {
 	padding-top: 12px;
+        color: #000;
 }
 #about {
 	width: 740px;
