@@ -41,26 +41,7 @@
                 </ul>
         </div>
         <div class="sidebar">
-                <h1>Newest Content</h1>
-                <ul class="posts">
-                        <li>
-                                <h4 class="title"><a href="/posts">Making It Work</a></h4>
-                                <p>
-                                        I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.
-                                </p>
-                        </li>
-                        <li>
-                                <h4 class="title"><a href="/posts">Designs and Concepts</a></h4>
-                                <p>
-                                        I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.
-                                </p>
-                        </li>
-                        <li>
-                                <h4 class="title"><a href="/posts">Getting It Done!</a></h4>
-                                <p>
-                                        I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.
-                                </p>
-                        </li>
-                </ul>
+                <h1>Newest Photo</h1>
+                {newestimage}
         </div>
 </div>
