@@ -104,49 +104,7 @@ img {
 #navigation li.active a {
 	color: #149594;
 }
-#adbox {
-	background: url(../images/bg-adbox.jpg) repeat-x left top;
-	height: 380px;
-	padding: 60px 0;
-}
-#adbox > div {
-	width: 800px;
-	margin: 0 auto;
-	padding: 0 80px;
-}
-#adbox > div img {
-	float: right;
-	margin-left: 60px;
-}
-#adbox h1, #adbox h2 {
-	color: #2c2c2c;
-	font-size: 60px;
-	line-height: 60px;
-	margin: 0;
-	text-transform: uppercase;
-}
-#adbox h2 {
-	font-size: 30px;
-	line-height: 36px;
-	text-transform: none;
-}
-#adbox p {
-	font-size: 16px;
-	line-height: 24px;
-	margin: 0;
-}
-#adbox p span {
-	display: block;
-	font-size: 12px;
-	width: 360px;
-	padding: 24px 0;
-	text-align: center;
-}
-#adbox p span b {
-	font-weight: normal;
-	display: block;
-	width: 256px;
-}
+
 /*------------------------------ CONTENTS ------------------------------*/
 #contents {
 	min-height: 510px;
@@ -204,12 +162,11 @@ p a {
 	height: 78px;
 	width: 70px;
 	margin-right: 20px;
-	border: 1px solid #d5d5d5;
 	text-align: center;
 }
 /* Title of date */
 .date p {
-	margin: 12px 0 0;
+	//margin: 12px 0 0;
         color: #000;
 }
 
@@ -219,6 +176,12 @@ p a {
 	margin-bottom: 6px;
         color: #000;
 }
+
+.date p img {
+    max-width:100%;
+    max-height:100%;    
+}
+
 .author {
 	color: #585858;
 	display: block;
@@ -306,13 +269,15 @@ p a {
 	text-decoration: none;
 }
 .post {
-	width: 785px;
+	width: 90%;
 	margin: 0 auto;
         color: #000;
-        margin-bottom: 10px;
-        border-bottom:dotted;
-        border-width: 10px;
-        border-color: #000;
+        margin-bottom: 80px;
+        border-bottom: solid;
+        padding-top: 30px;
+        border-top: solid;
+        border-width: 1px;
+        border-color: #BBB;
 }
 .post h1 {
 	padding-top: 12px;
