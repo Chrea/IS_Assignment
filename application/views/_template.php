@@ -22,7 +22,7 @@
 					<a href="/gallery">Photos</a>
 				</li>
 				<li>
-					<a href="/repository">Repository</a>
+					<a href="/repository">Top Voted</a>
 				</li>
 				<li>
 					<a href="/about">About</a>
@@ -34,8 +34,7 @@
 	{content}
 	</div>
 	<div id="footer">
-		<div class="clearfix">
-		</div>
+             Christofer Klassen & Rhea Lauzon </br> CST Set 4O-- Winter 2015.
 	</div>
 </body>
 </html>
