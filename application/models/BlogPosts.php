@@ -44,6 +44,19 @@ class BlogPosts extends CI_Model {
         // If we didn't find it, return null
         return null;
     }
+    
+    // Retrieve a number of newest blog posts
+    public function getNewestPosts($num) {
+        $posts[] = "";
+        
+        // Retrieve the newest $num blog posts
+        for ($i = 0; $i < $num && $i < sizeof($this->data); $i++)
+        {
+            $posts += $this->data[$i];
+        }
+        
+        return $posts;
+    }
 
     // Retrieve all blog posts
     public function getAllPosts() {
