@@ -5,8 +5,9 @@
                 </p>
         </div>
         <h1>{title}<span class="author">{author}</span></h1>
-        {content}
-        <p />
+        <p>
+            {content}
+        </p>
         <p>
             {date} - {votes} votes
         </p>
