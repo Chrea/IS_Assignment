@@ -107,7 +107,7 @@ img {
 
 /*------------------------------ CONTENTS ------------------------------*/
 #contents {
-	min-height: 510px;
+
 	margin: 0px 30px;
 	padding: 54px 40px;
         
@@ -143,19 +143,7 @@ p a {
 	width: 400px;
 	margin: 0 20px;
 }
-#contents .features {
-	width: 810px;
-	margin: 0 auto;
-}
-.features > div {
-	display: inline-block;
-	margin: 0 0 30px;
-}
-.features > div img {
-	float: left;
-	margin-right: 20px;
-	margin-top: 36px;
-}
+
 .date {
 	float: left;
 	height: 78px;
@@ -204,9 +192,11 @@ p a {
 .main {
 	float: left;
 	background: url(../images/divider.png) repeat-y right top;
-	min-height: 100px;
 	width: 70%;
+        margin-left: auto;
+        margin-right: auto;
         word-wrap: break-word;
+
 }
 
 .main h1 {
@@ -221,9 +211,7 @@ p a {
 /** sidebar **/
 .sidebar {
 	float: left;
-	min-height: 848px;
-	width: 216px;
-	margin-left: 20px;
+	width: 30%;
 }
 
 .sidebar h1 {
@@ -251,9 +239,9 @@ p a {
 
 /** posts */
 .posts {
+        width: 70%;
         margin-left: auto;
         margin-right: auto;
-        width: 70%;
         word-wrap: break-word;
 }
 
@@ -266,7 +254,7 @@ p a {
 
 /** Single Post **/
 .post {
-	max-width: 90%;
+	width: 90%;
 	margin: 0 auto;
         color: #000;
         margin-bottom: 80px;
@@ -275,7 +263,9 @@ p a {
         border-top: solid;
         border-width: 1px;
         border-color: #BBB;
+        word-wrap: break-word;
 }
+
 .post h1 {
 	padding-top: 12px;
         color: #000;
