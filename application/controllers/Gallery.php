@@ -24,7 +24,7 @@ class Gallery extends Application {
             );
             $this->table->set_template($parms);
             
-            $rows = $this->table->make_columns($cells, 4);
+            $rows = $this->table->make_columns($cells, 3);
             $this->data['thetable'] = $this->table->generate($rows);
             
             //render the data
