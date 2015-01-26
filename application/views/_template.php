@@ -34,8 +34,7 @@
 	{content}
 	</div>
 	<div id="footer">
-		<div class="clearfix">
-		</div>
+             Christofer Klassen & Rhea Lauzon </br> CST Set 4O-- Winter 2015.
 	</div>
 </body>
 </html>

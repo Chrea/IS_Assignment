@@ -206,9 +206,10 @@ p a {
 	float: left;
 	background: url(../images/divider.png) repeat-y right top;
 	min-height: 100px;
-	width: 620px;
-	padding-right: 24px;
+	width: 70%;
+        word-wrap: break-word;
 }
+
 .main h1, .sidebar h1 {
 	margin: 0 0 12px;
 	position: relative;
@@ -229,26 +230,8 @@ p a {
 .sidebar h1 {
        text-align: center;
 }
-.sidebar ul, .news {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-.news li {
-	border-top: 1px solid #d5d5d5;
-	padding: 24px 30px 0 100px;
-	position: relative;
-}
-.news li .date {
-	float: none;
-	position: absolute;
-	left: 0;
-	top: 30px;
-}
-.news li > p span, .post > span {
-	display: block;
-	text-align: right;
-}
+
+/** posts */
 .posts {
 	border-top: 1px solid #d5d5d5;
 }
@@ -272,8 +255,10 @@ p a {
 	font-size: 16px;
 	text-decoration: none;
 }
+
+/** Single Post **/
 .post {
-	width: 90%;
+	max-width: 90%;
 	margin: 0 auto;
         color: #000;
         margin-bottom: 80px;
@@ -287,6 +272,7 @@ p a {
 	padding-top: 12px;
         color: #000;
 }
+
 #about {
 	width: 740px;
 	margin: 0 auto;
@@ -346,43 +332,7 @@ p a {
 #footer {
 	background-color: #eee;
 	border-top: 1px solid #d8d8d8;
-	padding: 30px 0;
+	padding: 30px 10px;
 }
-#footer p {
-	font-size: 12px;
-	line-height: 30px;
-	padding-left: 10px;
-}
-#connect {
-	float: right;
-	display: inline-block;
-	margin-right: 30px;
-}
-#connect a {
-	background: url(../images/icons.png) no-repeat;
-	display: inline-block;
-	height: 30px;
-	width: 30px;
-	margin: 0 10px;
-}
-#connect a.googleplus {
-	background-position: 0 -40px;
-}
-#connect a.twitter {
-	background-position: 0 -80px;
-}
-#connect a.tumbler {
-	background-position: 0 -120px;
-}
-#connect a.facebook:hover {
-	background-position: -40px 0;
-}
-#connect a.googleplus:hover {
-	background-position: -40px -40px;
-}
-#connect a.twitter:hover {
-	background-position: -40px -80px;
-}
-#connect a.tumbler:hover {
-	background-position: -40px -120px;
-}
+
+
