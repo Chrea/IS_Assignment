@@ -8,6 +8,6 @@
         {content}
         <p />
         <p>
-            {date}
+            {date} - {votes} votes
         </p>
 </div>

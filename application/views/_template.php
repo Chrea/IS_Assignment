@@ -22,7 +22,7 @@
 					<a href="/gallery">Photos</a>
 				</li>
 				<li>
-					<a href="/repository">Repository</a>
+					<a href="/top_rated">Top Rated</a>
 				</li>
 				<li>
 					<a href="/about">About</a>
