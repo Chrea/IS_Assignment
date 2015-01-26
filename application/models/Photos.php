@@ -12,9 +12,9 @@ class Photos extends CI_Model {
     var $data = array(
         array('id' => '1', 'author' => 'Chris Klassen', 'photo' => 'https://magnesiumninja.files.wordpress.com/2015/01/7e7973792cdb7608f68f6efd3876ef56.png',
             'description' => 'Beautiful.', 'date' => 'January 23, 2015'),
-        array('id' => '1', 'author' => 'Rhea Lauzon', 'photo' => 'https://magnesiumninja.files.wordpress.com/2015/01/3590225fc185f3877a9990556a09e2b2.png',
+        array('id' => '2', 'author' => 'Rhea Lauzon', 'photo' => 'https://magnesiumninja.files.wordpress.com/2015/01/3590225fc185f3877a9990556a09e2b2.png',
             'description' => 'Such code.', 'date' => 'January 23, 2015'),
-        array('id' => '1', 'author' => 'Rhea Lauzon', 'photo' => 'https://magnesiumninja.files.wordpress.com/2014/07/screen2.png',
+        array('id' => '3', 'author' => 'Rhea Lauzon', 'photo' => 'https://magnesiumninja.files.wordpress.com/2014/07/screen2.png',
             'description' => 'So ocean.', 'date' => 'January 23, 2015')
     );
 

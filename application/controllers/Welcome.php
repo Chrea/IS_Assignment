@@ -7,12 +7,29 @@ class Welcome extends Application {
 	public function index()
 	{
             
-            //get the newest photo added to the database
-            $picture = $this->photos->getFirstPhoto();
+            $this->newestPhotos();
+            $this->newestPosts();
             
-            $cell[] = $this->parser->parse('_cell', (array) $picture, true);
+            $this->data['pagebody'] = 'home';
+            $this->render();
+	}
+        
+        /************************************************
+         * Fetches the 3 newest photos in the database
+         * and displays them in the side bar of the page.
+         ***********************************************/
+        public function newestPhotos()
+        {
+            //get the three newest photos
+            $pictures[] = $this->photos->getFirstPhoto();            
+            $pictures[] = $this->photos->getPhoto( 2 );
+            $pictures[] = $this->photos->getPhoto( 3 );
             
-            
+            foreach ( $pictures as $picture )
+            {
+                $cells[] = $this->parser->parse('_cell', (array) $picture, true);
+            }
+                  
             //prime the table class
             $this->load->library('table');
             $parms = array (
@@ -22,13 +39,39 @@ class Welcome extends Application {
             );
             $this->table->set_template($parms);
             
-            $rows = $this->table->make_columns($cell, 1);
-            $this->data['newestimage'] = $this->table->generate($rows);
+            $rows = $this->table->make_columns($cells, 1);
+            $this->data['newestimages'] = $this->table->generate($rows);       
+        }
+        
+        
+          /************************************************
+         * Fetches the 3 newest blog posts in the database
+         * and displays them in the main content region.
+         ***********************************************/
+        public function newestPosts()
+        {
+            //get the three newest posts
+            $posts[] = $this->blogposts->getFirstPost();            
+            $posts[] = $this->blogposts->getPost( 2 );
+            $posts[] = $this->blogposts->getPost( 3 );
             
+            foreach ( $posts as $post )
+            {
+                $cells[] = $this->parser->parse('_post', (array) $post, true);
+            }
+                  
+            //prime the table class
+            $this->load->library('table');
+            $parms = array (
+                'table_open' => '<table class="gallery">', 
+                'cell_start' => '<td class="oneimage">', 
+                'cell_alt_start' => '<td class="oneimage">'
+            );
+            $this->table->set_template($parms);
             
-                $this->data['pagebody'] = 'home';
-                $this->render();
-	}
+            $rows = $this->table->make_columns($cells, 1);
+            $this->data['newestposts'] = $this->table->generate($rows);       
+        }
 }
 
 /* End of file welcome.php */
