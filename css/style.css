@@ -108,13 +108,12 @@ img {
 /*------------------------------ CONTENTS ------------------------------*/
 #contents {
 	min-height: 510px;
-	width: 880px;
-	margin: 0 auto;
+	margin: 0px 30px;
 	padding: 54px 40px;
         
 }
 h1 {
-	color: #3e3e3e;
+	color: #149594;
 	font-size: 30px;
 	font-weight: normal;
 	line-height: 30px;
@@ -210,10 +209,10 @@ p a {
         word-wrap: break-word;
 }
 
-.main h1, .sidebar h1 {
-	margin: 0 0 12px;
-	position: relative;
-	top: -18px;
+.main h1 {
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
 }
 .main h2 span {
 	display: block;
@@ -231,30 +230,39 @@ p a {
        text-align: center;
 }
 
+
+/** Photos */
+.sidebar .photo {
+        border-bottom: 1px solid #d5d5d5;
+        margin-bottom: 10px;
+}
+
+.gallery {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    
+}
+
+.photo img {
+        height: auto;
+        width: 300px;
+}
+
 /** posts */
 .posts {
-	border-top: 1px solid #d5d5d5;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+        word-wrap: break-word;
 }
-.posts li {
-	border-bottom: 1px solid #d5d5d5;
-	padding: 24px 10px 0;
-        color: #FFF;
+
+.posts h1 {
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
 }
-.posts li p {
-	font-size: 14px;
-         color: #000;
-}
-.posts li .title {
-	font-size: 16px;
-	font-weight: normal;
-	margin: 0 0 12px;
-        color: #000;
-}
-.posts li .title a {
-	ccolor: #000;
-	font-size: 16px;
-	text-decoration: none;
-}
+
 
 /** Single Post **/
 .post {
@@ -289,45 +297,7 @@ p a {
 .section h1 {
 	margin-bottom: 18px;
 }
-.message input[type='text'], .message textarea {
-	color: #aeaeae;
-	font-size: 13px;
-	height: 33px;
-	line-height: 33px;
-	width: 380px;
-	border: 1px solid #d5d5d5;
-	margin: 0 0 6px;
-	padding: 0 4px;
-}
-.message textarea {
-	height: 175px;
-	overflow: auto;
-	resize: none;
-}
-.message input[type='submit'] {
-	float: right;
-	background-color: #818181;
-	color: #d5d5d5;
-	cursor: pointer;
-	font: 13px/30px Arial, Helvetica, sans-serif;
-	height: 30px;
-	border: 0;
-	margin: 0;
-	padding: 0 10px;
-}
-.contact {
-	background-color: #f8f8f8;
-	width: 270px;
-	padding: 124px 60px;
-	text-align: center;
-}
-.contact p span {
-	color: #2c2c2c;
-	display: block;
-	font-size: 30px;
-	line-height: 36px;
-	padding: 18px 0;
-}
+
 /*------------------------------ FOOTER ------------------------------*/
 #footer {
 	background-color: #eee;
