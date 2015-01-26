@@ -55,9 +55,6 @@ class Photos extends CI_Model {
 
     // Retrieve a number of newest photos
     public function getNewestPhotos($num) {        
-        
-        $photos = array();
-        
         // Retrieve the newest $num blog posts
         for ($i = 0; $i < $num && $i < sizeof($this->data); $i++)
         {

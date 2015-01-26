@@ -46,13 +46,11 @@ class BlogPosts extends CI_Model {
     }
     
     // Retrieve a number of newest blog posts
-    public function getNewestPosts($num) {
-        $posts[] = "";
-        
+    public function getNewestPosts($num) {        
         // Retrieve the newest $num blog posts
         for ($i = 0; $i < $num && $i < sizeof($this->data); $i++)
         {
-            $posts += $this->data[$i];
+            $posts[] = $this->data[$i];
         }
         
         return $posts;
@@ -71,7 +69,7 @@ class BlogPosts extends CI_Model {
     // Retrieve the top n blog posts by rating
     public function getTopPosts($num) {
         // TEMP: Return the first three posts in the model
-        $posts;
+        $posts = array();
         
         for ($i = 0; $i < $this->data->size && $i < $num; $i++)
         {

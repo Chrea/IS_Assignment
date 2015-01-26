@@ -53,7 +53,7 @@ class Welcome extends Application {
         {
             //get the three newest posts
             $posts[] = $this->blogposts->getNewestPosts(3);
-            
+                        
             foreach ( $posts as $post )
             {
                 $cells[] = $this->parser->parse('_post', (array) $post, true);
