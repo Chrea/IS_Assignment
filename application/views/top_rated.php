@@ -1,5 +1,4 @@
-<div id="contents">
-        <div class="top_rated">
-            {blogposts}
-        </div>
+<div id="contents" class="posts">
+        <h1>Top Rated Blog Posts</h1>
+       {blogposts}
 </div>

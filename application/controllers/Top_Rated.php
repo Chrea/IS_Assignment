@@ -6,7 +6,7 @@ class Top_Rated extends Application {
 
 	public function index()
 	{
-                $posts = $this->blogposts->getAllPosts();
+                $posts = $this->blogposts->getTopPosts(10);
                 $content = "";
                 
                 // Parse each blog post into html
