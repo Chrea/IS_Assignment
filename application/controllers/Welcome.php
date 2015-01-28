@@ -21,7 +21,7 @@ class Welcome extends Application {
         public function newestPhotos()
         {
             //get the three newest photos
-            $pictures[] = $this->photos->getNewestPhotos(3);
+            $pictures = $this->photos->getNewestPhotos(3);
             ////$pictures[] = $this->photos->getFirstPhoto();            
             //$pictures[] = $this->photos->getPhoto( 2 );
             //$pictures[] = $this->photos->getPhoto( 3 );
@@ -52,7 +52,7 @@ class Welcome extends Application {
         public function newestPosts()
         {
             //get the three newest posts
-            $posts[] = $this->blogposts->getNewestPosts(3);
+            $posts = $this->blogposts->getNewestPosts(3);
                         
             foreach ( $posts as $post )
             {
