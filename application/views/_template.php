@@ -12,7 +12,7 @@
 				<a href="/">Develop()</a>
 			</div>
 			<ul id="navigation">
-				<li class="active">
+				<li>
 					<a href="/">Home</a>
 				</li>
 				<li>
