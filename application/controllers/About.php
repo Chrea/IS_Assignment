@@ -2,6 +2,12 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+/**
+ * @author Rhea Lauzon
+ * 
+ * This is a simple about page for the project.
+ */
 class About extends Application {
 
 	public function index()

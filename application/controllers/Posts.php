@@ -2,6 +2,13 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+/**
+ * @author Rhea Lauzon & Christofer Klassen
+ * 
+ * This page displays all posts of the application
+ * displayed chronologically (newest first, oldest last)
+ */
 class Posts extends Application {
 
         // Load all blog posts onto the page
