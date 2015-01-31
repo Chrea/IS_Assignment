@@ -2,6 +2,13 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+/**
+ * @author Rhea Lauzon & Christofer Klassen
+ * 
+ * This page displays the blog posts in order
+ * by the highest rated to lowest rated.s
+ */
 class Top_Rated extends Application {
 
 	public function index()
@@ -32,5 +39,5 @@ class Top_Rated extends Application {
         
 }
 
-/* End of file Top_Rated.php */
+/* End of file Top_rated.php */
 /* Location: ./application/controllers/Top_Rated.php */

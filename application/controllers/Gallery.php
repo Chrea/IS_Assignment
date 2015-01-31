@@ -2,6 +2,13 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+/**
+ * @author Rhea Lauzon & Christofer Klassen
+ * 
+ * This page displays all images posted in the form
+ * of a grid. The photos are viewable with a click.
+ */
 class Gallery extends Application {
 
 	public function index()

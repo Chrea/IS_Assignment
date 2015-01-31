@@ -2,6 +2,14 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+/**
+ * @author Rhea Lauzon & Christofer Klassen
+ * 
+ * This page is the home page of the application.
+ * It displays the 3 newest blog posts in the main
+ * body and the 3 newest images in the sidebar.
+ */
 class Welcome extends Application {
 
 	public function index()
@@ -41,6 +49,7 @@ class Welcome extends Application {
             $this->table->set_template($parms);
             
             $rows = $this->table->make_columns($cells, 1);
+            //place the data on screen
             $this->data['newestimages'] = $this->table->generate($rows);       
         }
         
@@ -69,6 +78,7 @@ class Welcome extends Application {
             $this->table->set_template($parms);
             
             $rows = $this->table->make_columns($cells, 1);
+            //place the data on the screen
             $this->data['newestposts'] = $this->table->generate($rows);       
         }
 }
