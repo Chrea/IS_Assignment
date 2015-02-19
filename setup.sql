@@ -9,10 +9,10 @@ DROP TABLE IF EXISTS `photos`;
 -- Create new tables
 CREATE TABLE `blogposts`
 ( `postId`    int(10)        NOT NULL
-, `author`    varchar(20)    NOT NULL
-, `avatar`    varchar(60)    NOT NULL
-, `title`     varchar(20)    NOT NULL
-, `content`   varchar(1024)  NOT NULL
+, `author`    varchar(64)    NOT NULL
+, `avatar`    text    NOT NULL
+, `title`     varchar(64)    NOT NULL
+, `content`   text  NOT NULL
 , `votes`     int(3)         NOT NULL
 , `postDate`  varchar(10)    NOT NULL
 , PRIMARY KEY(`postId`)
@@ -20,9 +20,9 @@ CREATE TABLE `blogposts`
 
 CREATE TABLE `photos`
 ( `photoId`		int(10)         NOT NULL
-, `author`		varchar(20)    NOT NULL
-, `photo` 		varchar(60)    NOT NULL
-, `description`	varchar(100)
+, `author`		varchar(64)    NOT NULL
+, `photo` 		text    NOT NULL
+, `description`	text
 , `postDate`    varchar(10)    NOT NULL
 , PRIMARY KEY(`photoId`)
 );
