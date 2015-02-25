@@ -9,6 +9,6 @@
             {content}
         </p>
         <p>
-            {date} - {votes} votes
+            {postDate} - {votes} votes
         </p>
 </div>
