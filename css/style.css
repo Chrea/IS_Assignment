@@ -273,6 +273,19 @@ p a {
         color: #000;
 }
 
+.post h1 a {
+    color:#000;
+    text-decoration: none;
+}
+
+.post h1 a:hover {
+    text-decoration: underline;
+}
+
+.post h1 a:visited {
+    text-decoration:none;
+}
+
 #about {
 	width: 740px;
 	margin: 0 auto;

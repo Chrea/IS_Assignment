@@ -38,6 +38,16 @@ class Posts extends Application {
             return $content;
         }
         
+        
+        public function post($id)
+        {
+            //set the data to the post we want to display
+            $this->data['pagebody'] = '_post';  
+            $this->data = array_merge($this->data, (array) $this->blogposts->get($id));
+
+            $this->render();            
+        }
+        
 }
 
 /* End of file Post.php */
