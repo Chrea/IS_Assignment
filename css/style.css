@@ -244,6 +244,12 @@ p a {
  text-align: center;  
 }
 
+#like {
+    height: autho;
+    width: 50px;
+    
+}
+
 
 
 /** posts */
