@@ -38,6 +38,16 @@ class Gallery extends Application {
             $this->data['pagebody']= 'gallery';
             $this->render();
 	}
+        
+        public function image($id)
+        {
+            //set the data to the post we want to display
+            $this->data['pagebody'] = '_image';  
+            $this->data = array_merge($this->data, (array) $this->photos->get($id));
+
+            $this->render();            
+        }
+        
 }
 
 /* End of file Gallery.php */

@@ -14,11 +14,11 @@ class Welcome extends Application {
 
 	public function index()
 	{
+            $this->data['pagebody'] = 'home';
             
             $this->newestPhotos();
             $this->newestPosts();
-            
-            $this->data['pagebody'] = 'home';
+          
             $this->render();
 	}
         
@@ -30,9 +30,6 @@ class Welcome extends Application {
         {
             //get the three newest photos
             $pictures = $this->photos->getNewestPhotos(3);
-            ////$pictures[] = $this->photos->getFirstPhoto();            
-            //$pictures[] = $this->photos->getPhoto( 2 );
-            //$pictures[] = $this->photos->getPhoto( 3 );
             
             foreach ( $pictures as $picture )
             {
@@ -81,6 +78,7 @@ class Welcome extends Application {
             //place the data on the screen
             $this->data['newestposts'] = $this->table->generate($rows);       
         }
+        
 }
 
 /* End of file welcome.php */
