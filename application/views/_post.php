@@ -10,5 +10,8 @@
     </p>
     <p>
         {postDate} - {votes} votes
+        <a href="/posts/upvote/{postId}">
+        <img id="like" src="/images/like.png" />
+        </a>
     </p>
 </div>

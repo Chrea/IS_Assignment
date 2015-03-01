@@ -14,7 +14,7 @@ class Posts extends Application {
         // Load all blog posts onto the page
 	public function index()
 	{
-                $posts = $this->blogposts->getAllPosts();
+                $posts = $this->blogposts->getPostsNewestFirst();
                 $content = "";
                 
                 // Parse each blog post into html
@@ -46,6 +46,22 @@ class Posts extends Application {
             $this->data = array_merge($this->data, (array) $this->blogposts->get($id));
 
             $this->render();            
+        }
+        
+        //handle an upvote and update the database
+        public function upvote($id)
+        {   
+            
+            //fetch the post that is being upvoted
+            $post = $this->blogposts->get($id);
+            
+            //update the votes value
+            $post->votes++;
+            $this->blogposts->update($post);
+            
+
+            redirect('/posts');
+
         }
         
 }
