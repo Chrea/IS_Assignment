@@ -89,7 +89,7 @@ img {
 }
 #navigation li {
 	float: left;
-	width: 160px;
+	width: 120px;
 	text-align: center;
 }
 #navigation li a {
@@ -151,6 +151,14 @@ p a {
 	margin-right: 20px;
 	text-align: center;
 }
+
+.errors
+{
+    color: #990000;
+    font-size: 20px;
+    margin-bottom: 32px;
+}
+
 /* Title of date */
 .date p {
 	//margin: 12px 0 0;
@@ -166,7 +174,8 @@ p a {
 
 .date p img {
     max-width:100%;
-    max-height:100%;    
+    max-height:100%;   
+    border: 2px solid #000;
 }
 
 .author {
@@ -235,7 +244,15 @@ p a {
 .photo img {
         height: auto;
         width: 300px;
+        border: 2px solid #000;
 }
+
+.imageView
+{
+ text-align: center;  
+}
+
+
 
 /** posts */
 .posts {
@@ -271,18 +288,32 @@ p a {
         color: #000;
 }
 
+.post h1 a {
+    color:#000;
+    text-decoration: none;
+}
+
+.post h1 a:hover {
+    text-decoration: underline;
+}
+
+.post h1 a:visited {
+    text-decoration:none;
+}
+
+
 #about {
-	width: 740px;
-	margin: 0 auto;
+    width: 740px;
+    margin: 0 auto;
 }
 #about h1, .section h1 {
-	border-bottom: 1px solid #e0e0e0;
-	padding-bottom: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 12px;
 }
 .section {
-	float: left;
-	width: 390px;
-	margin-right: 50px;
+    float: left;
+    width: 390px;
+    margin-right: 50px;
 }
 .section h1 {
 	margin-bottom: 18px;

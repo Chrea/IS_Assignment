@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>{pagetitle}</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 <body>
 	<div id="header">
@@ -26,6 +26,9 @@
 				</li>
 				<li>
 					<a href="/about">About</a>
+				</li>
+				<li>
+					<a href="/admin">Admin</a>
 				</li>
 			</ul>
 		</div>
