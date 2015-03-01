@@ -151,6 +151,14 @@ p a {
 	margin-right: 20px;
 	text-align: center;
 }
+
+.errors
+{
+    color: #990000;
+    font-size: 20px;
+    margin-bottom: 32px;
+}
+
 /* Title of date */
 .date p {
 	//margin: 12px 0 0;

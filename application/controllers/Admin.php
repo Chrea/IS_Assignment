@@ -32,61 +32,194 @@ class Admin extends Application {
         }
 
         function showPost($post) {
-            // format any errors
+            // Identify any errors
             $message = '';
+            
             if (count($this->errors) > 0) {
-              foreach ($this->errors as $booboo)
-                $message .= $booboo . BR;
+                foreach ($this->errors as $error)
+                {
+                    $message .= $error . BR;
+                }
             }
-            $this->data['message'] = $message;
+            
+            $this->data['errorMessage'] = $message;
 
-            $this->data['fid'] = makeTextField('ID#', 'id', $quote->id, "Unique quote identifier,
-                system-assigned", 10, 10, true);
-            $this->data['fwho'] = makeTextField('Author', 'who', $quote->who);
-            $this->data['fmug'] = makeTextField('Picture', 'mug', $quote->mug);
-            $this->data['fwhat'] = makeTextArea('The Quote', 'what', $quote->what);
-            $this->data['pagebody'] = 'quote_edit';
+            // Fill the text fields
+            $this->data['fAuthor'] = makeTextField('Author', 'author', $post->author);
+            $this->data['fAvatar'] = makeTextField('Avatar', 'avatar', $post->avatar);
+            $this->data['fTitle'] = makeTextArea('Title', 'title', $post->title);
+            $this->data['fContent'] = makeTextArea('Content', 'content', $post->content);
+            
+            $this->data['pagebody'] = 'edit_post';
 
-            $this->data['fsubmit'] = makeSubmitButton('Process Quote', "Click here to "
-                    . "validate the quotation data", 'btn-success');
+            $this->data['fSubmit'] = makeSubmitButton('Submit Post', "Submit the "
+                    . "updated post", 'btn-success');
 
             $this->render();
         }
 
-        function confirmPostCreate() {
-            $record = $this->quotes->create();      
+        function confirmPost() {
+            $record = $this->blogposts->create();      
 
             // Extract submitted fields
-            $record->id = $this->input->post('id');
-            $record->who = $this->input->post('who');
-            $record->mug = $this->input->post('mug');
-            $record->what = $this->input->post('what');
+            $record->postId = $this->input->post('postId');
+            $record->author = $this->input->post('author');
+            $record->avatar = $this->input->post('avatar');
+            $record->title = $this->input->post('title');
+            $record->content = $this->input->post('content');
 
-              // Error checking
-            if (empty($record->who))
+            // Error checking
+            if (empty($record->author))
             {
                 $this->errors[] = 'You must specify an author.';
             }
-
-            if (strlen($record->what) < 20)
+            
+            if (empty($record->avatar))
             {
-                $this->errors[] = 'A quotation must be at least 20 characters long.';
+                $this->errors[] = 'You must specify an avatar.';
             }
 
+            if (empty($record->title))
+            {
+                $this->errors[] = 'You must specify a title.';
+            }
+
+            if (empty($record->content))
+            {
+                $this->errors[] = 'You must specify a post body.';
+            }
+            
             if (count($this->errors) > 0)
             {
-                $this->present($record);
+                $this->showPost($record);
                 return;
             }
 
+            // Update the record's date
+            $date = getdate();
+            $dateString = $date['year'] . "-" . $date['mon'] . "-" . $date['mday'];
+            $record->postDate = $dateString;
+            
             // Add or update the record
             if (empty($record->id)) 
             {
-                $this->quotes->add($record);
+                $newestPost = $this->blogposts->getNewestPosts(1);
+                
+                if (count($newestPost) != 0)
+                {
+                    // If there are pre-existing posts
+                    $record->postId = $newestPost[0]->postId + 1;
+                }
+                else
+                {
+                    $record->postId = 0;
+                }
+                
+                $this->blogposts->add($record);
             }
             else 
             {
-                $this->quotes->update($record);
+                $this->blogposts->update($record);
+            }
+
+            redirect('/admin');
+        }
+        
+        function addPhoto()
+        {
+            $photo = $this->photos->create();
+            $this->showPhoto($photo);
+        }
+
+        function showPhoto($photo) {
+            // Identify any errors
+            $message = '';
+            
+            if (count($this->errors) > 0) {
+                foreach ($this->errors as $error)
+                {
+                    $message .= $error . BR;
+                }
+            }
+            
+            $this->data['errorMessage'] = $message;
+
+            // Fill the text fields
+            $this->data['fAuthor'] = makeTextField('Author', 'author', $photo->author);
+            $this->data['fDescription'] = makeTextField('Description', 'description', $photo->description);
+            $this->data['fTitle'] = makeTextField('Title', 'title', $photo->title);
+            $this->data['fPhoto'] = makeTextField('Photo', 'photo', $photo->photo);
+            
+            $this->data['pagebody'] = 'edit_photo';
+
+            $this->data['fSubmit'] = makeSubmitButton('Submit Post', "Submit the "
+                    . "updated photo", 'btn-success');
+
+            $this->render();
+        }
+
+        function confirmPhoto() {
+            $record = $this->photos->create();      
+
+            // Extract submitted fields
+            $record->photoId = $this->input->post('photoId');
+            $record->author = $this->input->post('author');
+            $record->description = $this->input->post('description');
+            $record->title = $this->input->post('title');
+            $record->photo = $this->input->post('photo');
+
+            // Error checking
+            if (empty($record->author))
+            {
+                $this->errors[] = 'You must specify an author.';
+            }
+            
+            if (empty($record->photo))
+            {
+                $this->errors[] = 'You must specify a photo.';
+            }
+
+            if (empty($record->title))
+            {
+                $this->errors[] = 'You must specify a title.';
+            }
+
+            if (empty($record->description))
+            {
+                $this->errors[] = 'You must specify a description.';
+            }
+            
+            if (count($this->errors) > 0)
+            {
+                $this->showPhoto($record);
+                return;
+            }
+
+            // Update the record's date
+            $date = getdate();
+            $dateString = $date['year'] . "-" . $date['mon'] . "-" . $date['mday'];
+            $record->postDate = $dateString;
+            
+            // Add or update the record
+            if (empty($record->id)) 
+            {
+                $newestPhoto = $this->photos->getNewestPhotos(1);
+                
+                if (count($newestPhoto) != 0)
+                {
+                    // If there are pre-existing posts
+                    $record->photoId = $newestPhoto[0]->photoId + 1;
+                }
+                else
+                {
+                    $record->photoId = 0;
+                }
+                
+                $this->photos->add($record);
+            }
+            else 
+            {
+                $this->photos->update($record);
             }
 
             redirect('/admin');
