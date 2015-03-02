@@ -59,12 +59,20 @@ class BlogPosts extends MY_Model {
         $postsSorted = $this->db->query('SELECT * FROM blogposts ORDER BY votes DESC');
         $postsArray = $postsSorted->result_array();
         
-        // TEMP: Return the first three posts in the model
         for ($i = 0; $i < $this->size() && $i < $num; $i++)
         {
             $posts[] = $postsArray[$i];
         }
         
         return $posts;
+    }
+    
+    //retrieve all posts in newest to oldest order
+    public function getPostsNewestFirst(){
+        
+        $postsSorted = $this->db->query('SELECT * FROM blogposts ORDER BY postId DESC');
+        $postsArray = $postsSorted->result_array();
+                
+        return $postsArray;
     }
 }
