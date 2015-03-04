@@ -31,6 +31,18 @@ class Admin extends Application {
             $this->showPost($post);
         }
 
+        function editPost($pid)
+        {
+            $post = $this->blogposts->get($pid);
+            $this->showPost($post);
+        }
+        
+        function deletePost($pid)
+        {
+            $this->blogposts->delete($pid);
+            redirect('/admin');
+        }
+        
         function showPost($post) {
             // Identify any errors
             $message = '';
@@ -45,6 +57,7 @@ class Admin extends Application {
             $this->data['errorMessage'] = $message;
 
             // Fill the text fields
+            $this->data['fId'] = makeTextField('Id', 'postId', $post->postId, "", 10, 10, true);
             $this->data['fAuthor'] = makeTextField('Author', 'author', $post->author);
             $this->data['fAvatar'] = makeTextField('Avatar', 'avatar', $post->avatar);
             $this->data['fTitle'] = makeTextArea('Title', 'title', $post->title);
@@ -101,7 +114,7 @@ class Admin extends Application {
             $record->postDate = $dateString;
             
             // Add or update the record
-            if (empty($record->id)) 
+            if (empty($record->postId)) 
             {
                 $newestPost = $this->blogposts->getNewestPosts(1);
                 
@@ -131,6 +144,18 @@ class Admin extends Application {
             $this->showPhoto($photo);
         }
 
+        function editPhoto($pid)
+        {
+            $photo = $this->photos->get($pid);
+            $this->showPhoto($photo);
+        }
+        
+        function deletePhoto($pid)
+        {
+            $this->photos->delete($pid);
+            redirect('/admin');
+        }
+        
         function showPhoto($photo) {
             // Identify any errors
             $message = '';
@@ -145,6 +170,7 @@ class Admin extends Application {
             $this->data['errorMessage'] = $message;
 
             // Fill the text fields
+            $this->data['fId'] = makeTextField('Id', 'photoId', $photo->photoId, "", 10, 10, true);
             $this->data['fAuthor'] = makeTextField('Author', 'author', $photo->author);
             $this->data['fDescription'] = makeTextField('Description', 'description', $photo->description);
             $this->data['fTitle'] = makeTextField('Title', 'title', $photo->title);
@@ -152,7 +178,7 @@ class Admin extends Application {
             
             $this->data['pagebody'] = 'edit_photo';
 
-            $this->data['fSubmit'] = makeSubmitButton('Submit Post', "Submit the "
+            $this->data['fSubmit'] = makeSubmitButton('Submit Photo', "Submit the "
                     . "updated photo", 'btn-success');
 
             $this->render();
@@ -201,7 +227,7 @@ class Admin extends Application {
             $record->postDate = $dateString;
             
             // Add or update the record
-            if (empty($record->id)) 
+            if (empty($record->photoId)) 
             {
                 $newestPhoto = $this->photos->getNewestPhotos(1);
                 
