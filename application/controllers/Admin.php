@@ -55,7 +55,8 @@ class Admin extends Application {
             }
             
             $this->data['errorMessage'] = $message;
-
+            $this->data['postId'] = $post->postId;            
+            
             // Fill the text fields
             $this->data['fId'] = makeTextField('Id', 'postId', $post->postId, "", 10, 10, true);
             $this->data['fAuthor'] = makeTextField('Author', 'author', $post->author);
@@ -71,11 +72,11 @@ class Admin extends Application {
             $this->render();
         }
 
-        function confirmPost() {
+        function confirmPost($pid) {
             $record = $this->blogposts->create();      
 
             // Extract submitted fields
-            $record->postId = $this->input->post('postId');
+            $record->postId = $pid;
             $record->author = $this->input->post('author');
             $record->avatar = $this->input->post('avatar');
             $record->title = $this->input->post('title');
@@ -168,7 +169,8 @@ class Admin extends Application {
             }
             
             $this->data['errorMessage'] = $message;
-
+            $this->data['photoId'] = $photo->photoId;
+            
             // Fill the text fields
             $this->data['fId'] = makeTextField('Id', 'photoId', $photo->photoId, "", 10, 10, true);
             $this->data['fAuthor'] = makeTextField('Author', 'author', $photo->author);
@@ -184,11 +186,11 @@ class Admin extends Application {
             $this->render();
         }
 
-        function confirmPhoto() {
+        function confirmPhoto($pid) {
             $record = $this->photos->create();      
 
             // Extract submitted fields
-            $record->photoId = $this->input->post('photoId');
+            $record->photoId = $pid;
             $record->author = $this->input->post('author');
             $record->description = $this->input->post('description');
             $record->title = $this->input->post('title');
