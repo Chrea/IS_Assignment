@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS `photos`;
 
 -- Create new tables
 CREATE TABLE `blogposts`
-( `postId`    int(10)        NOT NULL
+( `postId`    int(10)        NOT NULL AUTO_INCREMENT
 , `author`    varchar(64)    NOT NULL
 , `avatar`    text    NOT NULL
 , `title`     varchar(64)    NOT NULL
@@ -19,7 +19,8 @@ CREATE TABLE `blogposts`
 );
 
 CREATE TABLE `photos`
-( `photoId`		int(10)         NOT NULL
+( `photoId`		int(10)         NOT NULL AUTO_INCREMENT
+, `title`     varchar(64)      NOT NULL
 , `author`		varchar(64)    NOT NULL
 , `photo` 		text    NOT NULL
 , `description`	text
@@ -37,8 +38,8 @@ INSERT INTO `blogposts`
   VALUES (3, 'Rhea Lauzon', 'https://en.gravatar.com/userimage/17321210/5b8283d1650b1c74193e660de9570608.png', 'Post C', 'Boo!', 74, '2015-02-17');
 
 INSERT INTO `photos`
-  VALUES (1, 'Rhea Lauzon', 'https://magnesiumninja.files.wordpress.com/2015/01/7e7973792cdb7608f68f6efd3876ef56.png', 'Beautiful.', '2015-02-06');
+  VALUES (1, 'Magic', 'Rhea Lauzon', 'https://magnesiumninja.files.wordpress.com/2015/01/7e7973792cdb7608f68f6efd3876ef56.png', 'Beautiful.', '2015-02-06');
 INSERT INTO `photos`
-  VALUES (2, 'Rhea Lauzon', 'https://magnesiumninja.files.wordpress.com/2015/01/3590225fc185f3877a9990556a09e2b2.png', 'Gorgeous.', '2015-02-08');
+  VALUES (2, 'Incredible', 'Rhea Lauzon', 'https://magnesiumninja.files.wordpress.com/2015/01/3590225fc185f3877a9990556a09e2b2.png', 'Gorgeous.', '2015-02-08');
 INSERT INTO `photos`
-  VALUES (3, 'Chris Klassen', 'https://magnesiumninja.files.wordpress.com/2014/07/screen2.png', 'Scrumptious.', '2015-02-15');
+  VALUES (3, 'Absolute', 'Chris Klassen', 'https://magnesiumninja.files.wordpress.com/2014/07/screen2.png', 'Scrumptious.', '2015-02-15');
