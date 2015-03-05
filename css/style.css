@@ -29,6 +29,7 @@ img {
 	line-height:0;
 	visibility:hidden;
 }
+
 .btn {
 	background: url(../images/bg-button.png) no-repeat;
 	background-position: 0 -70px;
@@ -41,7 +42,22 @@ img {
 	text-decoration: none;
 	text-transform: uppercase;
 }
-.btn:hover {
+
+.btn-form {
+	background: url(../images/bg-button.png) no-repeat;
+	background-position: 0 -70px;
+	color: #fff;
+	display: inline-block;
+	font: 24px/60px 'OpenSans';
+	height: 60px;
+	width: 230px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+
+.btn:hover .btn-form:hover {
 	background-position: 0 0;
 }
 /*------------------------------ HEADER ------------------------------*/
