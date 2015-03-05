@@ -15,8 +15,7 @@
         {fAuthor}
         {fAvatar}
         {fTitle}
-        {fContent}  
-        <textarea class="richtext"></textarea>
+        <textarea name="content" id="content" class="richtext">{fContent}</textarea>
         {fSubmit}
     </form>
 </div>
