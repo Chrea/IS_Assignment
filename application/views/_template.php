@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>{pagetitle}</title>
 	<link rel="stylesheet" href="/css/style.css" type="text/css">
+        {caboose_styles}
 </head>
 <body>
 	<div id="header">
@@ -39,5 +40,8 @@
 	<div id="footer">
              Christofer Klassen & Rhea Lauzon </br> CST Set 4O -- Winter 2015.
 	</div>
+    
+        {caboose_scripts}
+        {caboose_trailings}
 </body>
 </html>
