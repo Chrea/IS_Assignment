@@ -13,7 +13,8 @@ class Admin extends Application {
         {
             parent::__construct();
             $this->load->helper('formfields');
-            $this->caboose->needed('uploader');
+            $this->load->helper('url');
+          
         }
         
 	public function index()
@@ -58,7 +59,10 @@ class Admin extends Application {
             $this->data['errorMessage'] = $message;
             $this->data['postId'] = $post->postId;            
             
-            // Fill the text fields
+           
+            
+            // Fill the text fields and make the form fields
+            $this->data['fImages'] = makeUploadImageField('Post images', 'images');
             $this->data['fId'] = makeTextField('Id', 'postId', $post->postId, "", 10, 10, true);
             $this->data['fAuthor'] = makeTextField('Author', 'author', $post->author);
             $this->data['fAvatar'] = makeTextField('Avatar', 'avatar', $post->avatar);
@@ -74,12 +78,22 @@ class Admin extends Application {
         }
 
         function confirmPost($pid) {
-            $record = $this->blogposts->create();      
+            $record = $this->blogposts->create();                           
             
-            //$_FILES superglobal
-            //loop through each file
-            //$this->handle_image_upload
-            //move_uploaded_file();
+            //upload the image
+            $config['upload_path']   = './uploads/';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['max_size']      = 100;
+            $config['max_width']     = 999999;
+            $config['max_height']    = 999999;
+            
+            $this->load->library('upload', $config);
+
+            // upload the image
+            if ($this->upload->do_upload('images') === false)
+            {
+                redirect('/');
+            }
             
             // Extract submitted fields
             $record->postId = $pid;
