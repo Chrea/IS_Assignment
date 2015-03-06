@@ -33,8 +33,7 @@ class Posts extends Application {
         // Parse the contents of a single post into the post template
         public function createPost($post)
         {
-            $content = $this->parser->parse('_post', (array) $post, true);
-            
+            $content = $this->parser->parse('_post', (array) $post, true);     
             return $content;
         }
         
