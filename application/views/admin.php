@@ -15,6 +15,8 @@
             <td>{author}</td>
             <td>{title}</td>
             <td>{content}</td>
+            <td><a href="/admin/editPost/{postId}">EDIT</a></td>
+            <td><a href="/admin/deletePost/{postId}">DELETE</a></td>
         </tr>
         {/blogposts}
         
@@ -40,6 +42,8 @@
             <td>{author}</td>
             <td>{photo}</td>
             <td>{description}</td>
+            <td><a href="/admin/editPhoto/{photoId}">EDIT</a></td>
+            <td><a href="/admin/deletePhoto/{photoId}">DELETE</a></td>
         </tr>
         {/photos}
         
