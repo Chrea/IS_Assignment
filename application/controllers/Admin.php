@@ -63,7 +63,7 @@ class Admin extends Application {
             $this->data['fAuthor'] = makeTextField('Author', 'author', $post->author);
             $this->data['fAvatar'] = makeTextField('Avatar', 'avatar', $post->avatar);
             $this->data['fTitle'] = makeTextArea('Title', 'title', $post->title);
-            $this->data['fContent'] = makeTextArea('Content', 'content', $post->content);
+            $this->data['fContent'] = $post->content;
             
             $this->data['pagebody'] = 'edit_post';
 
