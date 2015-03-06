@@ -3,8 +3,8 @@
 
 <div class="row">
   <div class="errors">{errorMessage}</div>
-    <form action="/admin/confirmPost/{postId}" method="post">
-    
+    <form  enctype="multipart/form-data" action="/admin/confirmPost/{postId}" method="post">
+        {fImages}
         {fId}
         {fAuthor}
         {fAvatar}
