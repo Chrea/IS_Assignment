@@ -75,7 +75,18 @@ class Admin extends Application {
 
         function confirmPost($pid) {
             $record = $this->blogposts->create();      
-
+            
+            //$_FILES superglobal
+            //loop through each file
+            //$this->handle_image_upload
+            //move_uploaded_file();
+            
+            foreach ($_FILES as $file)
+            {
+                echo "<script type='text/javascript'>alert('test');</script>";
+                move_uploaded_file($file['name'], "/");
+            }
+            
             // Extract submitted fields
             $record->postId = $pid;
             $record->author = $this->input->post('author');
