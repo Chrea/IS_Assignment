@@ -15,6 +15,7 @@ CREATE TABLE `blogposts`
 , `content`   text  NOT NULL
 , `votes`     int(3)         NOT NULL
 , `postDate`  varchar(10)    NOT NULL
+, `images`    text
 , PRIMARY KEY(`postId`)
 );
 
@@ -31,11 +32,11 @@ CREATE TABLE `photos`
 
 -- Insert dummy data into both tables
 INSERT INTO `blogposts`
-  VALUES (1, 'Chris Klassen', 'https://en.gravatar.com/userimage/17321210/5b8283d1650b1c74193e660de9570608.png', 'Post A', 'Hello!', 5, '2015-02-14');
+  VALUES (1, 'Chris Klassen', 'https://en.gravatar.com/userimage/17321210/5b8283d1650b1c74193e660de9570608.png', 'Post A', 'Hello!', 5, '2015-02-14', '../../data/rhea.png~../../data/rhea.png');
 INSERT INTO `blogposts`
-  VALUES (2, 'Chris Klassen', 'https://en.gravatar.com/userimage/17321210/5b8283d1650b1c74193e660de9570608.png', 'Post B', 'Hello there!', 23, '2015-02-15');
+  VALUES (2, 'Chris Klassen', 'https://en.gravatar.com/userimage/17321210/5b8283d1650b1c74193e660de9570608.png', 'Post B', 'Hello there!', 23, '2015-02-15', '../../data/rhea.png~../../data/rhea.png');
 INSERT INTO `blogposts`
-  VALUES (3, 'Rhea Lauzon', 'https://en.gravatar.com/userimage/17321210/5b8283d1650b1c74193e660de9570608.png', 'Post C', 'Boo!', 74, '2015-02-17');
+  VALUES (3, 'Rhea Lauzon', 'https://en.gravatar.com/userimage/17321210/5b8283d1650b1c74193e660de9570608.png', 'Post C', 'Boo!', 74, '2015-02-17', '../../data/rhea.png~../../data/rhea.png');
 
 INSERT INTO `photos`
   VALUES (1, 'Magic', 'Rhea Lauzon', 'https://magnesiumninja.files.wordpress.com/2015/01/7e7973792cdb7608f68f6efd3876ef56.png', 'Beautiful.', '2015-02-06');
