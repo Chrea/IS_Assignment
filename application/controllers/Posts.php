@@ -16,10 +16,10 @@ class Posts extends Application {
 	{
                 $posts = $this->blogposts->getPostsNewestFirst();
                 $content = "";
-                
                 // Parse each blog post into html
                 foreach($posts as $post)
                 {
+                    $post['images'] = array();//$this->parseBlogImages($post);
                     $content .= $this->createPost($post);
                 }
                 
@@ -43,7 +43,9 @@ class Posts extends Application {
         {
             //set the data to the post we want to display
             $this->data['pagebody'] = '_post';  
-            $this->data = array_merge($this->data, (array) $this->blogposts->get($id));
+            $post = $this->blogposts->get($id);
+            $post->images = $this->parseBlogImages($post);
+            $this->data = array_merge($this->data, (array) $post);
 
             $this->render();            
         }
@@ -62,6 +64,27 @@ class Posts extends Application {
 
             redirect('/posts');
 
+        }
+        
+        public function parseBlogImages($post)
+        {
+            $imageString = $post->images;
+            $imageArray = array();
+            
+            while (strlen($imageString) > 0)
+            {
+                $pos = strpos($imageString, '~');
+                if ($pos === false)
+                {
+                    $imageArray[] = array('img' => $imageString);
+                    break;
+                }
+                
+                $imageArray[] = array('img' => substr($imageString, 0, $pos));
+                $imageString = substr($imageString, $pos + 1, strlen($imageString));
+            }
+                        
+            return $imageArray;
         }
         
 }

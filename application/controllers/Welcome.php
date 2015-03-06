@@ -35,19 +35,26 @@ class Welcome extends Application {
             {
                 $cells[] = $this->parser->parse('_cell', (array) $picture, true);
             }
-                  
-            //prime the table class
-            $this->load->library('table');
-            $parms = array (
-                'table_open' => '<table class="gallery">', 
-                'cell_start' => '<td class="oneimage">', 
-                'cell_alt_start' => '<td class="oneimage">'
-            );
-            $this->table->set_template($parms);
-            
-            $rows = $this->table->make_columns($cells, 1);
-            //place the data on screen
-            $this->data['newestimages'] = $this->table->generate($rows);       
+                 
+            if (sizeof($pictures) > 0)
+            {
+                //prime the table class
+                $this->load->library('table');
+                $parms = array (
+                    'table_open' => '<table class="gallery">', 
+                    'cell_start' => '<td class="oneimage">', 
+                    'cell_alt_start' => '<td class="oneimage">'
+                );
+                $this->table->set_template($parms);
+
+                $rows = $this->table->make_columns($cells, 1);
+                //place the data on screen
+                $this->data['newestimages'] = $this->table->generate($rows);
+            }
+            else
+            {
+                $this->data['newestimages'] = "";
+            }
         }
         
         
@@ -62,21 +69,29 @@ class Welcome extends Application {
                         
             foreach ( $posts as $post )
             {
+                $post->images = array();
                 $cells[] = $this->parser->parse('_post', (array) $post, true);
             }
-                  
-            //prime the table class
-            $this->load->library('table');
-            $parms = array (
-                'table_open' => '<table class="gallery">', 
-                'cell_start' => '<td class="oneimage">', 
-                'cell_alt_start' => '<td class="oneimage">'
-            );
-            $this->table->set_template($parms);
             
-            $rows = $this->table->make_columns($cells, 1);
-            //place the data on the screen
-            $this->data['newestposts'] = $this->table->generate($rows);       
+            if (sizeof($posts))
+            {
+                //prime the table class
+                $this->load->library('table');
+                $parms = array (
+                    'table_open' => '<table class="gallery">', 
+                    'cell_start' => '<td class="oneimage">', 
+                    'cell_alt_start' => '<td class="oneimage">'
+                );
+                $this->table->set_template($parms);
+
+                $rows = $this->table->make_columns($cells, 1);
+                //place the data on the screen
+                $this->data['newestposts'] = $this->table->generate($rows);  
+            }
+            else
+            {
+                $this->data['newestposts'] = "There are no posts.";
+            }
         }
         
 }

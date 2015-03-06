@@ -19,6 +19,7 @@ class Top_Rated extends Application {
                 // Parse each blog post into html
                 foreach($posts as $post)
                 {
+                    $post['images'] = array();
                     $content .= $this->createPost($post);
                 }
                 

@@ -160,6 +160,10 @@ p a {
 	margin: 0 20px;
 }
 
+.postimage {
+    width: 200px;
+}
+
 .date {
 	float: left;
 	height: 78px;

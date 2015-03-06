@@ -13,7 +13,7 @@ class Admin extends Application {
         {
             parent::__construct();
             $this->load->helper('formfields');
-            $this->caboose->needed('uploader');
+            //$this->caboose->needed('uploader');
         }
         
 	public function index()
