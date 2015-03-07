@@ -34,8 +34,10 @@ class BlogPosts extends MY_Model {
         //fetch the highest ID value 
         $highestVal = $this->highest();
         
+        $posts = array();
+        
         // Retrieve the newest $num blog posts
-        for ($i = 0; $i < $num &&  $i <= $this->size(); $i++)
+        for ($i = 0; $i < $num &&  $i < $this->size(); $i++)
         {
             $posts[] = $this->get($highestVal -$i);
         }
@@ -58,6 +60,8 @@ class BlogPosts extends MY_Model {
         
         $postsSorted = $this->db->query('SELECT * FROM blogposts ORDER BY votes DESC');
         $postsArray = $postsSorted->result_array();
+        
+        $posts = array();
         
         for ($i = 0; $i < $this->size() && $i < $num; $i++)
         {

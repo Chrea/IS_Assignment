@@ -35,7 +35,9 @@ class Photos extends MY_Model {
         // Retrieve the newest $num blog posts        
         $highestVal = $this->highest();
         
-        for ($i = 0; $i < $num && $i <= $this->size(); $i++)
+        $photos = array();
+        
+        for ($i = 0; $i < $num && $i < $this->size(); $i++)
         {
             $photos[] = $this->get($highestVal - $i);
         }

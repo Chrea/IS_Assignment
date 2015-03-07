@@ -14,4 +14,9 @@
         <img id="like" src="/images/like.png" />
         </a>
     </p>
+    <p>
+        {images}
+        <a href="{img}"><img class="postimage" src="{img}" /></a>
+        {/images}
+    </p>
 </div>
