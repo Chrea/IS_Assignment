@@ -97,15 +97,18 @@ class Admin extends Application {
             
             for($i = 0; $i < $cpt; $i++)
             {
-                $_FILES['userfile']['name']= $files['userfile']['name'][$i];
-                $_FILES['userfile']['type']= $files['userfile']['type'][$i];
-                $_FILES['userfile']['tmp_name']= $files['userfile']['tmp_name'][$i];
-                $_FILES['userfile']['error']= $files['userfile']['error'][$i];
-                $_FILES['userfile']['size']= $files['userfile']['size'][$i];    
+                if (strlen($files['userfile']['name'][$i]) > 0)
+                {
+                    $_FILES['userfile']['name']= $files['userfile']['name'][$i];
+                    $_FILES['userfile']['type']= $files['userfile']['type'][$i];
+                    $_FILES['userfile']['tmp_name']= $files['userfile']['tmp_name'][$i];
+                    $_FILES['userfile']['error']= $files['userfile']['error'][$i];
+                    $_FILES['userfile']['size']= $files['userfile']['size'][$i];    
 
-                $this->upload->do_upload();
+                    $this->upload->do_upload();
 
-                $record->images .= "~../../uploads/" . $files['userfile']['name'][$i];
+                    $record->images .= "../../uploads/" . $files['userfile']['name'][$i] . "~";
+                }
             }
             
             // Extract submitted fields
